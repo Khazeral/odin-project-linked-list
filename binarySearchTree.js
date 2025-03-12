@@ -146,7 +146,22 @@ class Tree {
         return depth;
     }
 
-    
+    isBalanced(node= this.root){
+        if(node === null){
+            return true
+        }
+        const rightHeight = this.height(node.right)
+        const leftHeight = this.height(node.left)
+        if(Math.abs(leftHeight - rightHeight) > 1){
+            return false
+        }
+        return this.isBalanced(current.left) && this.isBalanced(current.right)
+    }
+
+    rebalance(current){
+
+    }
+
 }
 
 
